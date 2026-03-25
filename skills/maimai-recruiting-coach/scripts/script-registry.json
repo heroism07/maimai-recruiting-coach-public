@@ -1,0 +1,167 @@
+﻿{
+  "updated_at": "2026-03-24",
+  "default_policy": {
+    "page_control": "ai_takeover_first",
+    "online_reuse_success_path": "exact",
+    "legacy_directory": "legacy",
+    "candidate_sync_whitelist": [
+      "可沟通",
+      "储备观察"
+    ]
+  },
+  "scripts": [
+    {
+      "name": "run-search-session.js",
+      "status": "active",
+      "domain": "orchestration",
+      "entrypoint": true,
+      "owner": "maimai-skill",
+      "description": "职位模板批处理主编排入口"
+    },
+    {
+      "name": "run-hrbp-session.js",
+      "status": "active",
+      "domain": "orchestration",
+      "entrypoint": true,
+      "owner": "maimai-skill",
+      "description": "HR 一键执行封装入口（安全默认参数）"
+    },
+    {
+      "name": "run-filter-table-workflow.js",
+      "status": "active",
+      "domain": "template",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "模板拉取、执行状态更新、结果回写"
+    },
+    {
+      "name": "run-maimai-filter-bridge.js",
+      "status": "active",
+      "domain": "filter",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "筛选操作生成、路径复用、结果上报"
+    },
+    {
+      "name": "run-candidate-pipeline.js",
+      "status": "active",
+      "domain": "candidate",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "候选人标准化和飞书同步"
+    },
+    {
+      "name": "sync-runtime-filter-to-feishu.js",
+      "status": "active",
+      "domain": "template",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "运行态筛选条件写回飞书模板"
+    },
+    {
+      "name": "generate-filter-template.js",
+      "status": "active",
+      "domain": "template",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "从岗位画像生成筛选模板草案"
+    },
+    {
+      "name": "init-feishu-env.js",
+      "status": "support",
+      "domain": "setup",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "初始化飞书 URL 与运行配置"
+    },
+    {
+      "name": "setup-feishu-tables.js",
+      "status": "support",
+      "domain": "setup",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "飞书多维表字段初始化与修复"
+    },
+    {
+      "name": "audit-scripts.js",
+      "status": "support",
+      "domain": "governance",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "description": "脚本注册一致性合规检查"
+    },
+    {
+      "name": "run-online-filter-cycle.js",
+      "status": "maintenance",
+      "domain": "online-fallback",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/run-online-filter-cycle.js",
+      "description": "在线脚本筛选兜底（非默认）"
+    },
+    {
+      "name": "run-online-candidate-capture.js",
+      "status": "maintenance",
+      "domain": "online-fallback",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/run-online-candidate-capture.js",
+      "description": "在线脚本候选人采集兜底（非默认）"
+    },
+    {
+      "name": "run-memory-workflow.js",
+      "status": "maintenance",
+      "domain": "learning",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/run-memory-workflow.js",
+      "description": "学习模式与流程沉淀"
+    },
+    {
+      "name": "capture-maimai-auth-state.js",
+      "status": "maintenance",
+      "domain": "auth",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/capture-maimai-auth-state.js",
+      "description": "手动采集并保存登录态"
+    },
+    {
+      "name": "backfill-candidate-attachments.js",
+      "status": "maintenance",
+      "domain": "candidate",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/backfill-candidate-attachments.js",
+      "description": "历史候选人附件补写"
+    },
+    {
+      "name": "upgrade-filter-table-v2.js",
+      "status": "maintenance",
+      "domain": "migration",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/upgrade-filter-table-v2.js",
+      "description": "筛选模板表结构迁移到 v2"
+    },
+    {
+      "name": "prune-filter-table-fields.js",
+      "status": "maintenance",
+      "domain": "migration",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/prune-filter-table-fields.js",
+      "description": "删除模板表冗余旧字段"
+    },
+    {
+      "name": "migrate-filter-table-schema.js",
+      "status": "deprecated",
+      "domain": "migration",
+      "entrypoint": false,
+      "owner": "maimai-skill",
+      "location": "legacy/migrate-filter-table-schema.js",
+      "description": "历史迁移脚本，默认停用"
+    }
+  ]
+}
+

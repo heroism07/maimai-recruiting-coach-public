@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maimai Recruiting Coach"
+  short_description: "画像建模、筛选模板版本化、候选人与话术闭环"
+  default_prompt: "基于岗位画像生成脉脉筛选模板，按版本化规则同步飞书，并把候选人评估与合规打招呼草稿写入多维表格。"
